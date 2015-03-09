@@ -1,0 +1,926 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 8, ../sass/screen.scss */
+body {
+  /*
+  background:url(footage/mobile-bg.png)
+  background-color:#666;*/
+  font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 18, ../sass/screen.scss */
+#tooltips {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 30;
+  color: #FFF;
+  padding: 5px 10px;
+  font-size: 11px;
+}
+
+/* line 30, ../sass/screen.scss */
+#canvas {
+  width: 980px;
+  height: 580px;
+  margin: 0 auto;
+  background: #FFF;
+  position: relative;
+  overflow: hidden;
+  alignment-adjust: after-edge;
+}
+
+/* line 40, ../sass/screen.scss */
+#svg {
+  width: 980px;
+  height: 580px;
+  overflow: hidden;
+}
+
+/* line 47, ../sass/screen.scss */
+#line {
+  /*pointer-events:none;*/
+}
+
+/* line 51, ../sass/screen.scss */
+#map {
+  pointer-events: none;
+}
+
+/* line 55, ../sass/screen.scss */
+.menu {
+  position: absolute;
+  z-index: 20;
+  top: 160px;
+  left: 25px;
+  width: 24px;
+  height: 261px;
+  background: url(../footage/menu-off.png) no-repeat;
+}
+/* line 65, ../sass/screen.scss */
+.menu .item {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 23px;
+  cursor: pointer;
+  position: relative;
+}
+/* line 73, ../sass/screen.scss */
+.menu .item > div {
+  visibility: hidden;
+  /*display:none;*/
+  opacity: 0;
+}
+/* line 80, ../sass/screen.scss */
+.menu .item .icon {
+  width: 100%;
+  height: 100%;
+  background: url(../footage/menu-on.png) no-repeat;
+}
+/* line 86, ../sass/screen.scss */
+.menu .item .copy {
+  position: absolute;
+  top: 0px;
+  left: 30px;
+  width: 200px;
+  font-size: 14px;
+  line-height: 22px;
+}
+/* line 100, ../sass/screen.scss */
+.menu a {
+  color: #000;
+}
+/* line 104, ../sass/screen.scss */
+.menu .item1 .icon {
+  background-position: 0px 0px;
+}
+/* line 108, ../sass/screen.scss */
+.menu .item2 .icon {
+  background-position: 0px -47px;
+}
+/* line 112, ../sass/screen.scss */
+.menu .item3 .icon {
+  background-position: 0px -94px;
+}
+/* line 116, ../sass/screen.scss */
+.menu .item4 .icon {
+  background-position: 0px -141px;
+}
+/* line 120, ../sass/screen.scss */
+.menu .item5 .icon {
+  background-position: 0px -188px;
+}
+/* line 124, ../sass/screen.scss */
+.menu .item6 .icon {
+  background-position: 0px -235px;
+}
+
+/* line 132, ../sass/screen.scss */
+.index {
+  position: absolute;
+  top: 445px;
+  left: 30px;
+}
+/* line 138, ../sass/screen.scss */
+.index > div {
+  width: 15px;
+  height: 15px;
+  background: #F00;
+}
+/* line 143, ../sass/screen.scss */
+.index > div > div {
+  margin-left: 20px;
+  color: #666666;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  width: 100px;
+}
+/* line 153, ../sass/screen.scss */
+.index .c1 {
+  background: #e40000;
+}
+/* line 154, ../sass/screen.scss */
+.index .c2 {
+  background: #032c4b;
+}
+/* line 155, ../sass/screen.scss */
+.index .c3 {
+  background: #006382;
+}
+/* line 156, ../sass/screen.scss */
+.index .c4 {
+  background: #0087a4;
+}
+/* line 157, ../sass/screen.scss */
+.index .c5 {
+  background: #00aac8;
+}
+/* line 158, ../sass/screen.scss */
+.index .c6 {
+  background: #66c3d4;
+}
+/* line 159, ../sass/screen.scss */
+.index .c7 {
+  background: #98d5dd;
+}
+/* line 160, ../sass/screen.scss */
+.index .c8 {
+  background: #84bdc7;
+}
+/* line 162, ../sass/screen.scss */
+.index .copy {
+  width: 165px;
+  /*200px*/
+  height: 80px;
+  color: #333333;
+  background: transparent;
+  font-size: 10px;
+  position: absolute;
+  top: 40px;
+  /*80px*/
+  left: 100px;
+}
+/* line 172, ../sass/screen.scss */
+.index .copy .icon1 {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  vertical-align: top;
+}
+/* line 177, ../sass/screen.scss */
+.index .copy .icon1 img {
+  margin-right: 2px;
+}
+/* line 183, ../sass/screen.scss */
+.index .copy .icon2 {
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  vertical-align: top;
+}
+/* line 189, ../sass/screen.scss */
+.index .copy .icon2 img {
+  margin-right: 2px;
+}
+
+/* line 199, ../sass/screen.scss */
+.section {
+  position: absolute;
+  z-index: 10;
+}
+
+/* line 204, ../sass/screen.scss */
+.global {
+  top: 0px;
+  left: 0px;
+}
+/* line 208, ../sass/screen.scss */
+.global div {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+/* line 214, ../sass/screen.scss */
+.global .logo1 {
+  top: 10px;
+  left: 10px;
+}
+/* line 219, ../sass/screen.scss */
+.global .logo2 {
+  top: 10px;
+  left: 885px;
+}
+/* line 224, ../sass/screen.scss */
+.global .logo3 {
+  top: 530px;
+  left: 785px;
+}
+
+/* line 230, ../sass/screen.scss */
+.section1 {
+  top: 0px;
+  left: 0px;
+}
+/* line 234, ../sass/screen.scss */
+.section1 .logo {
+  width: 490px;
+  height: 491px;
+  background: url(../footage/section1.png) no-repeat;
+  position: absolute;
+  top: 44px;
+  left: 245px;
+}
+/* line 243, ../sass/screen.scss */
+.section1 .guide {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 980px;
+  height: 580px;
+  background: #CCC;
+}
+/* line 251, ../sass/screen.scss */
+.section1 .guide .step-btn {
+  z-index: 2;
+  position: absolute;
+  top: 4px;
+  left: 115px;
+}
+/* line 257, ../sass/screen.scss */
+.section1 .guide .step-btn div {
+  margin: 0px 10px 0 10px;
+}
+/* line 259, ../sass/screen.scss */
+.section1 .guide .step-btn .next-step-btn {
+  background: url(../footage/arrow_r.png) no-repeat;
+  width: 12px;
+  height: 18px;
+  float: left;
+}
+/* line 261, ../sass/screen.scss */
+.section1 .guide .step-btn .previous-step-btn {
+  float: left;
+  background: url(../footage/arrow_l.png) no-repeat;
+  width: 12px;
+  height: 18px;
+}
+/* line 263, ../sass/screen.scss */
+.section1 .guide .step-btn .r-dim {
+  background: url(../footage/arrow_r_dim.png) no-repeat;
+  opacity: .5;
+}
+/* line 264, ../sass/screen.scss */
+.section1 .guide .step-btn .l-dim {
+  background: url(../footage/arrow_l_dim.png) no-repeat;
+  opacity: .5;
+}
+/* line 268, ../sass/screen.scss */
+.section1 .guide .gudie-copy {
+  top: 25px;
+  left: 25px;
+  font-size: 14px;
+  color: #FFF;
+  z-index: 2;
+  position: absolute;
+}
+/* line 270, ../sass/screen.scss */
+.section1 .guide .gudie-copy .guide-copy1, .section1 .guide .gudie-copy .guide-copy2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+/* line 271, ../sass/screen.scss */
+.section1 .guide .gudie-copy .guide-copy1 {
+  font-weight: bold;
+}
+/* line 272, ../sass/screen.scss */
+.section1 .guide .gudie-copy .guide-copy3 {
+  font-size: 12px;
+}
+/* line 275, ../sass/screen.scss */
+.section1 .guide .close-gudie-btn {
+  position: absolute;
+  left: 912px;
+  z-index: 2;
+}
+/* line 278, ../sass/screen.scss */
+.section1 .guide .step {
+  width: 980px;
+  height: 580px;
+  z-index: 1;
+  position: absolute;
+  display: none;
+}
+/* line 280, ../sass/screen.scss */
+.section1 .guide .step-1 {
+  background: url(../footage/step1.jpg) no-repeat;
+  display: block;
+}
+/* line 281, ../sass/screen.scss */
+.section1 .guide .step-2 {
+  background: url(../footage/step2.jpg) no-repeat;
+}
+/* line 282, ../sass/screen.scss */
+.section1 .guide .step-3 {
+  background: url(../footage/step3.jpg) no-repeat;
+}
+/* line 283, ../sass/screen.scss */
+.section1 .guide .step-4 {
+  background: url(../footage/step4.jpg) no-repeat;
+}
+/* line 284, ../sass/screen.scss */
+.section1 .guide .step-5 {
+  background: url(../footage/step5.jpg) no-repeat;
+}
+/* line 285, ../sass/screen.scss */
+.section1 .guide .step-6 {
+  background: url(../footage/step6.jpg) no-repeat;
+}
+/* line 288, ../sass/screen.scss */
+.section1 .link {
+  width: 250px;
+  font-size: 12px;
+  position: absolute;
+  top: 495px;
+  left: 25px;
+}
+/* line 295, ../sass/screen.scss */
+.section1 .link a {
+  color: #000;
+}
+/* line 297, ../sass/screen.scss */
+.section1 .link div {
+  margin-bottom: 5px;
+}
+
+/* line 311, ../sass/screen.scss */
+.section2 {
+  top: 0px;
+  left: 0px;
+  width: 980px;
+  height: 580px;
+}
+/* line 317, ../sass/screen.scss */
+.section2 .copy {
+  width: 761px;
+  height: 761px;
+  background: url(../footage/section2.png) no-repeat;
+  position: absolute;
+  top: -111px;
+  left: 115px;
+}
+/* line 325, ../sass/screen.scss */
+.section2 .copy div {
+  color: #FFF;
+  font-size: 14px;
+  padding: 265px 123px;
+  text-align: center;
+  line-height: 23px;
+  font-family: "open sans", Arial;
+}
+
+/* line 339, ../sass/screen.scss */
+.section3 {
+  width: 244px;
+  /*height: 285px;*/
+  top: 175px;
+  left: 376px;
+}
+/* line 347, ../sass/screen.scss */
+.section3 .title {
+  width: 200px;
+  height: 150px;
+  background: url(../footage/section3-title.png) no-repeat;
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  /*pointer-events:none;*/
+}
+/* line 357, ../sass/screen.scss */
+.section3 .country {
+  font-size: 20px;
+  color: #CCC;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 112px;
+  margin-top: 20px;
+}
+/* line 366, ../sass/screen.scss */
+.section3 .value {
+  font-size: 50px;
+  color: #CCC;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 112px;
+  line-height: 50px;
+}
+/* line 374, ../sass/screen.scss */
+.section3 .desc {
+  font-size: 12px;
+  padding: 10px;
+  line-height: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+/* line 383, ../sass/screen.scss */
+.section3 .button a {
+  display: block;
+  background: #000;
+  margin: 0px 54px;
+  padding: 5px;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* line 399, ../sass/screen.scss */
+.section3-popup {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  	/*background: rgb(0, 0, 0); 
+    	background: rgba(0, 0, 0, 0.6); 	*/
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+/* line 410, ../sass/screen.scss */
+.section3-popup a {
+  color: #FFFFFF;
+}
+/* line 412, ../sass/screen.scss */
+.section3-popup .case-btn {
+  font-size: 14px;
+  color: #F3F3F3;
+  text-decoration: none;
+}
+/* line 418, ../sass/screen.scss */
+.section3-popup .select-dim {
+  color: #ffffff;
+  font-weight: bold;
+}
+/* line 423, ../sass/screen.scss */
+.section3-popup .hit {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+/* line 431, ../sass/screen.scss */
+.section3-popup .close-btn {
+  left: 779px;
+}
+/* line 435, ../sass/screen.scss */
+.section3-popup .content {
+  position: absolute;
+  top: 40px;
+  left: 260px;
+  /* background: #CCC; */
+  width: 460px;
+  height: 500px;
+  font-size: 12px;
+  color: white;
+}
+/* line 445, ../sass/screen.scss */
+.section3-popup .content .title-copy {
+  font-size: 18px;
+  margin-top: 10px;
+}
+/* line 451, ../sass/screen.scss */
+.section3-popup .content .media img {
+  width: 100%;
+}
+/* line 455, ../sass/screen.scss */
+.section3-popup .content .media iframe {
+  width: 100%;
+}
+/* line 460, ../sass/screen.scss */
+.section3-popup .content .copy {
+  height: 145px;
+  overflow: hidden;
+}
+/* line 467, ../sass/screen.scss */
+.section3-popup .bg {
+  -webkit-border-radius: 600px;
+  -moz-border-radius: 600px;
+  -ms-border-radius: 600px;
+  -o-border-radius: 600px;
+  border-radius: 600px;
+  background-color: #F00;
+  opacity: 1;
+  position: absolute;
+  top: -70px;
+  left: 123px;
+  width: 730px;
+  height: 730px;
+}
+
+/* line 480, ../sass/screen.scss */
+.close-btn {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background: url(../footage/close-btn.png) no-repeat center;
+  top: 50px;
+  left: 700px;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* line 492, ../sass/screen.scss */
+#section4Copy {
+  cursor: pointer;
+}
+
+/* line 497, ../sass/screen.scss */
+#section4_bar1 path, #section4_bar2 path, #section4_bar3 path, #section4_bar4 path {
+  cursor: pointer;
+}
+
+/* line 501, ../sass/screen.scss */
+.section4 {
+  top: 0px;
+  left: 0px;
+}
+/* line 512, ../sass/screen.scss */
+.section4 .wrapper {
+  width: 556px;
+  height: 556px;
+  position: absolute;
+  top: 12px;
+  left: 212px;
+  -webkit-border-radius: 278px;
+  -moz-border-radius: 278px;
+  -ms-border-radius: 278px;
+  -o-border-radius: 278px;
+  border-radius: 278px;
+  background-color: #FFF;
+}
+/* line 522, ../sass/screen.scss */
+.section4 .wrapper .indicator {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: url(../footage/section4-indicator.png) no-repeat 120px 100px;
+  padding: 125px 90px 50px 100px;
+  font-size: 12px;
+}
+/* line 530, ../sass/screen.scss */
+.section4 .wrapper .indicator ul {
+  margin: 0px;
+  list-style: none;
+  margin-top: 17px;
+}
+/* line 535, ../sass/screen.scss */
+.section4 .wrapper .indicator ul li {
+  margin-bottom: 8px;
+}
+/* line 541, ../sass/screen.scss */
+.section4 .wrapper .content {
+  padding: 125px 100px 50px 100px;
+  color: #FFF;
+  font-size: 14px;
+}
+/* line 546, ../sass/screen.scss */
+.section4 .wrapper .content .country {
+  font-size: 25px;
+  color: #FFF;
+  text-align: center;
+  line-height: 39px;
+  font-family: "Trajan Pro",'Open Sans', sans-serif;
+}
+/* line 554, ../sass/screen.scss */
+.section4 .wrapper .content .country div {
+  color: #FFF;
+  text-align: center;
+  margin: 20px auto;
+  width: 150px;
+  height: 21px;
+  margin-top: 0px;
+}
+/* line 566, ../sass/screen.scss */
+.section4 .wrapper .content .country .c1 {
+  background: url(../footage/c1.png) no-repeat;
+}
+/* line 569, ../sass/screen.scss */
+.section4 .wrapper .content .country .c2 {
+  background: url(../footage/c2.png) no-repeat;
+}
+/* line 572, ../sass/screen.scss */
+.section4 .wrapper .content .country .c3 {
+  background: url(../footage/c3.png) no-repeat;
+}
+/* line 575, ../sass/screen.scss */
+.section4 .wrapper .content .country .c4 {
+  background: url(../footage/c4.png) no-repeat;
+}
+/* line 578, ../sass/screen.scss */
+.section4 .wrapper .content .country .c5 {
+  background: url(../footage/c5.png) no-repeat;
+}
+/* line 581, ../sass/screen.scss */
+.section4 .wrapper .content .country .c6 {
+  background: url(../footage/c6.png) no-repeat;
+}
+/* line 584, ../sass/screen.scss */
+.section4 .wrapper .content .country .c7 {
+  background: url(../footage/c7.png) no-repeat;
+}
+/* line 587, ../sass/screen.scss */
+.section4 .wrapper .content .country .c8 {
+  background: url(../footage/c8.png) no-repeat;
+}
+/* line 591, ../sass/screen.scss */
+.section4 .wrapper .content .value {
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  width: 320px;
+  height: 53px;
+  background: url(../footage/section4-icon.png) no-repeat 23px 13px;
+  padding: 11px 0px 0px 46px;
+}
+/* line 603, ../sass/screen.scss */
+.section4 .wrapper .content .value .col {
+  float: left;
+  width: 33px;
+}
+/* line 607, ../sass/screen.scss */
+.section4 .wrapper .content .value .col > div {
+  margin-bottom: 2px;
+  height: 18px;
+  font-size: 14px;
+}
+/* line 614, ../sass/screen.scss */
+.section4 .wrapper .content .value .col.bar {
+  width: 100px;
+  cursor: pointer;
+}
+/* line 618, ../sass/screen.scss */
+.section4 .wrapper .content .value .col.bar > div {
+  background: url(../footage/bar-bg.png);
+}
+/* line 623, ../sass/screen.scss */
+.section4 .wrapper .content .value .col.bar > div > div {
+  background: #FFF;
+  width: 50px;
+  height: 18px;
+}
+/* line 634, ../sass/screen.scss */
+.section4 .wrapper .content .value .col2 {
+  margin-left: 34px;
+}
+/* line 640, ../sass/screen.scss */
+.section4 .wrapper .content .legend {
+  width: 420px;
+  height: 18px;
+  background: url(../footage/section4-legend.png) no-repeat;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+/* line 649, ../sass/screen.scss */
+.section4 .wrapper .content .copy {
+  font-size: 12px;
+}
+
+/* line 660, ../sass/screen.scss */
+.section5 {
+  top: 0px;
+  left: 0px;
+}
+/* line 668, ../sass/screen.scss */
+.section5 .page1.select .country {
+  color: #333;
+}
+/* line 673, ../sass/screen.scss */
+.section5 .page1.select .indicator {
+  color: #333;
+  border-bottom-color: #333;
+}
+/* line 680, ../sass/screen.scss */
+.section5 .page2 {
+  position: absolute;
+  top: 192px;
+  left: 370px;
+  /*text-align:center;*/
+  width: 245px;
+}
+/* line 688, ../sass/screen.scss */
+.section5 .page2 .indicator-cat {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+}
+/* line 695, ../sass/screen.scss */
+.section5 .page2 .indicator {
+  /*padding: 0px 0px 0px 0px;
+   border-bottom: 1px solid #ccc; */
+  font-size: 11px;
+  margin-left: -25px;
+  margin-top: -10px;
+  line-height: 1.4em;
+  /* 
+   color: #ccc; */
+}
+/* line 706, ../sass/screen.scss */
+.section5 .page2 .indicator-title {
+  font-size: 11px;
+  margin-top: 5px;
+}
+/* line 713, ../sass/screen.scss */
+.section5 .page2 .no-content {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+/* line 724, ../sass/screen.scss */
+.section5 .page1 {
+  position: absolute;
+  top: 192px;
+  left: 390px;
+  text-align: center;
+  width: 200px;
+}
+/* line 731, ../sass/screen.scss */
+.section5 .page1 .title {
+  width: 155px;
+  height: 48px;
+  background: url(../footage/section5.svg) no-repeat;
+  margin: 0 auto;
+}
+/* line 739, ../sass/screen.scss */
+.section5 .page1 .country {
+  text-transform: capitalize;
+  font-size: 14px;
+  padding: 20px 0px 5px 0px;
+  color: #ccc;
+}
+/* line 746, ../sass/screen.scss */
+.section5 .page1 .indicator {
+  padding: 0px 0px 5px 0px;
+  border-bottom: 1px solid #ccc;
+  font-size: 12px;
+  color: #cccccc;
+}
+/* line 756, ../sass/screen.scss */
+.section5 .page1 .value {
+  font-size: 30px;
+  padding: 10px;
+}
+/* line 762, ../sass/screen.scss */
+.section5 .page1 .button {
+  font-size: 12px;
+}
+/* line 765, ../sass/screen.scss */
+.section5 .page1 .button a {
+  display: block;
+  background: #000;
+  margin: 0px 54px;
+  padding: 5px;
+  text-align: center;
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 782, ../sass/screen.scss */
+.section5 .list {
+  position: absolute;
+  top: 30px;
+  left: 775px;
+  font-size: 11px;
+  color: #333333;
+}
+/* line 789, ../sass/screen.scss */
+.section5 .list ul {
+  list-style: none;
+  padding: 0px;
+}
+/* line 794, ../sass/screen.scss */
+.section5 .list li.title {
+  padding-left: 8px;
+  font-weight: bold;
+}
+/* line 801, ../sass/screen.scss */
+.section5 .list a {
+  color: #333333;
+  text-decoration: none;
+  display: block;
+  width: 190px;
+  padding-left: 7px;
+  line-height: 20px;
+}
+/* line 811, ../sass/screen.scss */
+.section5 .list a span {
+  font-weight: bold;
+}
+/* line 816, ../sass/screen.scss */
+.section5 .list a.title {
+  font-weight: bold;
+}
+/* line 821, ../sass/screen.scss */
+.section5 .list a:hover {
+  background-color: #CCC;
+}
+/* line 825, ../sass/screen.scss */
+.section5 .list a.select {
+  background-color: #CCC;
+}
+/* line 831, ../sass/screen.scss */
+.section5 .wrapper {
+  width: 556px;
+  height: 556px;
+  position: absolute;
+  top: 12px;
+  left: 212px;
+  -webkit-border-radius: 278px;
+  -moz-border-radius: 278px;
+  -ms-border-radius: 278px;
+  -o-border-radius: 278px;
+  border-radius: 278px;
+  background-color: #FFF;
+}
+/* line 840, ../sass/screen.scss */
+.section5 .wrapper .country div {
+  color: #FFF;
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
+  height: 21px;
+  margin-top: 168px;
+}
+/* line 850, ../sass/screen.scss */
+.section5 .wrapper .country .c1 {
+  background: url(../footage/c1.png) no-repeat;
+}
+/* line 853, ../sass/screen.scss */
+.section5 .wrapper .country .c2 {
+  background: url(../footage/c2.png) no-repeat;
+}
+/* line 856, ../sass/screen.scss */
+.section5 .wrapper .country .c3 {
+  background: url(../footage/c3.png) no-repeat;
+}
+/* line 859, ../sass/screen.scss */
+.section5 .wrapper .country .c4 {
+  background: url(../footage/c4.png) no-repeat;
+}
+/* line 862, ../sass/screen.scss */
+.section5 .wrapper .country .c5 {
+  background: url(../footage/c5.png) no-repeat;
+}
+/* line 865, ../sass/screen.scss */
+.section5 .wrapper .country .c6 {
+  background: url(../footage/c6.png) no-repeat;
+}
+/* line 868, ../sass/screen.scss */
+.section5 .wrapper .country .c7 {
+  background: url(../footage/c7.png) no-repeat;
+}
+/* line 871, ../sass/screen.scss */
+.section5 .wrapper .country .c8 {
+  background: url(../footage/c8.png) no-repeat;
+}
+/* line 875, ../sass/screen.scss */
+.section5 .wrapper .copy {
+  color: #FFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 25px 74px;
+}
+
+/* line 887, ../sass/screen.scss */
+#section3_bar path {
+  cursor: pointer;
+}
+
+/* line 892, ../sass/screen.scss */
+.hide {
+  visibility: hidden;
+  /*display:none;*/
+  opacity: 0;
+}

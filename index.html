@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>South asia women's resilience index</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+<link href='stylesheets/screen.css' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="js/jquery.mCustomScrollbar.css" />
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/raphael-min.js"></script>
+<script src="js/snap.svg.js"></script>
+<script src="js/snap.plugin.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/plugins/CSSPlugin.min.js"></script>
+<script src="js/easing/EasePack.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/shell.js"></script>
+<script>
+
+var indicator = [];
+var indicator2 = [];
+var guide_title = [];
+var guide_copy = [];
+indicator[1] = '<ul><li>GDP per capita</li><li>Level of foreign currency reserves</li><li>Poverty headcount ratio</li><li>Government funding for disaster relief (per person)</li></ul>';
+indicator[2] = '<ul><li>Microfinance : Women borrowers</li><li>Building credit histories</li><li>Women\'s access to finance programmes</li><li>Loans at financial institutions</li><li>Accounts at financial institutions</li></ul>';
+indicator[3] = '<ul><li>Employment guarantee schemes for women</li><li>Female unemployment rate</li></ul>';
+indicator[4] = '<ul><li>Adherence to land use regulations</li></ul>';
+indicator[5] = '<ul><li>Adherence to building codes</li></ul>';
+indicator[6] = '<ul><li>Penetration of TV</li><li>Penetration of Radio</li><li>Mobile cellular subscriptions </li><li>Availability of an effective early warning system</li></ul>';
+indicator[7] = '<ul><li>Quality of power</li><li>Access to electricity</li></ul>';
+indicator[8] = '<ul><li>Treatment of wastewater</li><li>Pesticide and fertiliser regulation</li><li>Loss in forested area</li><li>Protection of terrestrial and marine areas</li></ul>';
+indicator[9] = '<ul><li>Access to sanitation</li><li>Waste water treatment (Urban)</li><li>Waste water treatment (Rural)</li></ul>';
+indicator[10] = '<ul><li>Quality of transport network</li></ul>';
+indicator[11] = '<ul><li>Access to potable water</li></ul>';
+indicator[12] = '<ul><li>Implementation of CEDAW</li><li>Assessment of National Critical Infrastructure Plan</li><li>Existence of social safety nets</li></ul>';
+indicator[13] = '<ul><li>Disaster preparedness drills</li><li>Quality of emergency response team</li><li>Military force</li><li>Police force</li><li>Women in police force</li><li>Influence of women in police force</li></ul>';
+indicator[14] = '<ul><li>Transboundary risk assessment systems and agreements</li><li>National platform for multilevel coordination of DRR</li><li>Decentralisation</li></ul>';
+indicator[15] = '<ul><li>Gender perspective in disaster management planning</li><li>Inclusion of women in DRR decision-making and leadership</li><li>Consideration of the needs of female internally-displaced persons</li><li>Inclusion of women in disaster preparedness training</li><li>Measures to address violence against women</li></ul>';
+indicator[16] = '<ul><li>Government corruption</li><li>Quality of the bureaucracy</li><li>Effectiveness of legal system</li><li>Well-defined property rights</li><li>Presence of free and independent media</li><li>Women\'s access to common property and government-allocated land</li><li>Women\'s property rights</li></ul>';
+indicator[17] = '<ul><li>Violent crime level</li><li>Trafficking in persons</li><li>Deaths from organised conflict (internal)</li><li>Deaths from homicides</li></ul>';
+indicator[18] = '<ul><li>Dependency ratio</li><li>Internally displaced persons (IDPs)</li><li>Ease of mobility for women</li></ul>';
+indicator[19] = '<ul><li>Female/male literacy rate</li><li>Rate of secondary school enrollment (girls)</li><li>Rate of primary school enrollment (girls)</li></ul>';
+indicator[20] = '<ul><li># of doctors/1000</li><li># of hospitals/land unit</li><li>Affordability of healthcare</li><li>Level of child malnutrition</li><li>Fertility rate</li><li>Psychiatric morbidity</li></ul>';
+indicator2[1] = 'Country-level economic strength';
+indicator2[2] = 'Personal finance: Women';
+indicator2[3] = 'Labour environment: Women';
+indicator2[4] = 'Adherence to land use regulations';
+indicator2[5] = 'Adherence to building codes';
+indicator2[6] = 'Communication';
+indicator2[7] = 'Power';
+indicator2[8] = 'Environmental performance';
+indicator2[9] = 'Sanitation';
+indicator2[10] = 'Quality of transport network';
+indicator2[11] = 'Access to potable water';
+indicator2[12] = 'Domestic protection';
+indicator2[13] = 'Culture of safety';
+indicator2[14] = 'Policy coordination';
+indicator2[15] = 'Gender focus in DRR policy';
+indicator2[16] = 'Government effectiveness';
+indicator2[17] = 'Violence';
+indicator2[18] = 'Population vulnerability';
+indicator2[19] = 'Education and gender';
+indicator2[20] = 'Health';
+guide_title[1] = 'Navigation menu';
+guide_title[2] = 'Graphs';
+guide_title[3] = 'Case studies';
+guide_title[4] = 'Case studies – videos';
+guide_title[5] = 'In-depth stats';
+guide_title[6] = '<b>Key indicators</b> and categories';
+guide_copy[1] = 'Please click on the item menus on the left to navigate the tool.';
+guide_copy[2] = 'The tool is fully interactive; by placing your <br/>mouse over the colour bars shown here <br/>and clicking you will be able to see each <br/>country’s rank under the selected <br/>categories and indicators.';
+guide_copy[3] = 'The tool includes case studies from some of <br/>the countries. Please click “case study” to view <br/>and learn more.';
+guide_copy[4] = 'Some of the case studies are videos. <br/>Ensure you click on the image to play the <br/>embedded video.';
+guide_copy[5] = 'Click the white dots scattered around the circle <br/>in the indicator score section for more <br/>detailed information on each country.';
+guide_copy[6] = 'Click on the on the indicator and category menu to reveal the comparison <br/>for all countries and a description of what that indicator measures.';
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36493963-28', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body style="">
+<div id="tooltips" class="hide">Hello World</div>
+<div id="canvas"> <svg id="svg"></svg>
+  <div id="menu"class="menu hide">
+    <div class="item1 item" rel="1">
+      <div class="icon"></div>
+      <div class="copy">Home</div>
+    </div>
+    <div class="item2 item" rel="2">
+      <div class="icon"></div>
+      <div class="copy">About</div>
+    </div>
+    <div class="item3 item" rel="3">
+      <div class="icon"></div>
+      <div class="copy">Overall country scores</div>
+    </div>
+    <div class="item4 item" rel="4">
+      <div class="icon"></div>
+      <div class="copy">Key category scores</div>
+    </div>
+    <div class="item5 item" rel="5">
+      <div class="icon"></div>
+      <div class="copy">Indicator scores</div>
+    </div>
+    <div class="item6 item" rel="6"> <a href="download/The South Asia Women's Resilience Index Dec8.pdf" target="_blank">
+      <div class="icon"></div>
+      <div class="copy">Download the full report</div>
+      </a> </div>
+  </div>
+  <div class="common">
+    <div class="index hide">
+      <div class="c1">
+        <div>Japan</div>
+      </div>
+      <div class="c2">
+        <div>Bhutan</div>
+      </div>
+      <div class="c3">
+        <div>Sri Lanka</div>
+      </div>
+      <div class="c4">
+        <div>Nepal</div>
+      </div>
+      <div class="c5">
+        <div>India</div>
+      </div>
+      <div class="c6">
+        <div>Maldives</div>
+      </div>
+      <div class="c7">
+        <div>Bangladesh</div>
+      </div>
+      <div class="c8">
+        <div>Pakistan</div>
+      </div>
+      <div class="copy">The overall, key category and <br/>
+        indicator scores are normalised on <br/>
+        a scale of 1-100 to enable direct <br/>
+        comparisons, where 0 is worst and <br/>100 is best. 
+        Download the report <br/>for the full methodology. 
+        <div class="icon1"><img src="footage/icon1.png"> Click </div>
+        <div class="icon2"><img src="footage/icon2.png">Details </div>
+      </div>
+    </div>
+  </div>
+  <div class="global section">
+    <div class="logo1"><a href="#" target="_blank"><img src="footage/economist.png"></a></div>
+    <div class="logo2"><a href="http://www.actionaid.org/australia" target="_blank"><img src="footage/actionaid.png"></a></div>
+    <div class="logo3"><a href="http://www.dfat.gov.au/pages/default.aspx" target="_blank"><img src="footage/gov.png"></a></div>
+  </div>
+  <div class="section1 section hide">
+    <div class="logo"></div>
+    <div class="guide hide">
+     
+    
+      <div class="gudie-copy">
+       <div class="step-btn">
+      <a href="" class="s-btn previous-step" rel="l"><div class="btn-l previous-step-btn l-dim"><img src="footage/arrow_l.png" ></div></a>
+      <a href="" class="s-btn next-step" rel="r"><div class="btn-r next-step-btn"><img src="footage/arrow_r.png" ></div></a>
+      
+      
+      <div style="clear:both"></div>
+      </div>
+      <a href="" class="close-guide"><div class="close-gudie-btn"><img src="footage/guide_cross.png" ></div></a>
+      
+        <div class="guide-copy1">Step 1 of 6 :</div>
+        <div class="guide-copy2">Main Navigation</div>
+        <div class="guide-copy3" >Click on the any item on the left for more details.</div>
+      </div>
+      <div class="step step-1"></div>
+      <div class="step step-2"></div>
+      <div class="step step-3"></div>
+      <div class="step step-4"></div>
+      <div class="step step-5"></div>
+      <div class="step step-6"></div>
+    </div>
+    <div class="link"> <a href="" class="user-guide">
+      <div>WRI user guide</div>
+      </a> <a href="http://www.actionaid.org/womenasleaders" target="_blank">
+      <div class="subscribe">Let’s champion women as leaders. Find all the answers on how to achieve that at:<br>http://www.actionaid.org/womenasleaders</div>
+      </a> </div>
+  </div>
+  <div class="section2 section hide">
+    <div class="copy">
+      <div> South Asia has been affected by a number of disasters in recent years, pushing disaster risk reduction (DRR) and resilience up development and policymaking agendas. Numerous examples show women are beginning to take the lead in preparing for, and responding to, disruptive events. But in South Asia, socio-cultural and economic barriers often prevent them from doing so. <br>
+        <br>
+        The South Asia Women’s Resilience Index (WRI) assesses countries’ capacity for DRR and recovery and the extent to which the needs of women are being considered in national resilience-building efforts. It covers seven countries in South Asia and includes Japan as a developed country benchmark.<br>
+        <br>
+        This interactive tool allows you to explore the results of the WRI, which draws upon a range of indicators in four categories—Economic, Infrastructure, Institutional and Social—to assess the capacity of a country to proactively adapt to and recover from disasters. As part of the project, 40% of the indicators in the WRI use gender-disaggregated data. </div>
+    </div>
+  </div>
+  <div class="section3 section hide">
+    <div class="title"></div>
+    <div class="content hide">
+      <div class="country">Bangladesh</div>
+      <div class="value">45.9</div>
+      <div class="desc">
+        <div class="c0">Bhutan, Sri Lanka, Nepal, India, the Maldives and Bangladesh achieve an overall score in a relatively narrow band</div>
+        <div class="c1">High-income, industrialised Japan included as a benchmark country to contextualise South Asian focus</div>
+        <div class="c8">Pakistan stands out for its limited progress but is developing some best-practice policies</div>
+      </div>
+      <div class="button"><a href="#">Case study</a></div>
+ 
+    </div>
+  </div>
+  <div class="section3-popup hide">
+    <div class="hit"></div>
+    <div class="bg"></div>
+    <div class="close-btn"></div>
+    <div class="content c1"></div>
+    <div class="content c2"></div>
+    <div class="content c3"></div>
+    <div class="content c4">
+     
+     <div class="case-study case-study-1">
+      <div class="media"  style=" text-align:center; ">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Z73i5sU3VnQ?rel=0" frameborder="0" allowfullscreen></iframe>      
+       </div>
+      </div>
+    
+    </div>
+    <div class="content c5">
+      <div class="media" ><img src="footage/India.jpg"/></div>
+      <div class="title-copy">The disaster experiences of men and women</div>
+      <div class="copy scroll">
+        <p>From January to March 2014, ActionAid held focus groups to understand how the impact of disasters differs for men and women. </p>
+        <p>Focus groups in Uttarkhand, India—which is prone to earthquakes, landslides and flash floods—revealed differing perceptions according to gender. </p>
+        <p>Men tend to face problems getting employment, while women typically lose sources of income from selling farm products.</p>
+        <p>According to women participants, their work in rearing livestock is also made more difficult by the destruction of fields and pathways. </p>
+        <p>Disasters typically bring a greater burden of work at home for women in caring for dependants.</p>
+        <p>Women also face challenges in acquiring and preparing food during disasters, and find it difficult to escape when disaster hits. </p>
+        <p>To read more about this case study, <a href="download/The South Asia Women's Resilience Index Dec8.pdf" target="_blank">download the full report</a></p>
+      </div>
+    </div>
+    <div class="content c6"></div>
+    <div class="content c7">
+    <a href="#" class="case-btn case-btn-1 select-dim" ref="1">Case study 1</a> | <a href="#" class="case-btn case-btn-2" ref="2">Case study 2</a><br/><br/>
+     <div class="case-study case-study-1" >
+      <div class="media" style=" text-align:center; ">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/P2KlX_T45hk?rel=0" frameborder="0" allowfullscreen></iframe>      
+       </div>
+       </div>
+       
+    <div class="case-study case-study-2" style=" display:none;">
+      <div class="media"><img src="footage/Bangladesh.jpg"/></div>
+      <div class="title-copy">Funding for community resilience</div>
+      <div class="copy scroll">
+        <p>Most decision-making on budgets for disaster risk reduction is at the national level in South Asia. </p>
+        <p>Recognising an absence of incentives for disaster planning and resilience building at a local level, the Huairou Commission and civil society group GROOTS International set up the Community Resilience Fund. </p>
+        <p>Funding is directly channeled to women&rsquo;s organisations for projects that build the resilience of disaster-prone communities. </p>
+        <p>In Bangladesh, a programme was set up to train 20 women leaders who went on to &ldquo;map&rdquo; risks and vulnerabilities from floods. </p>
+        <p>The women identified waterlogging and poor sanitation as problems that were exacerbated during flooding. </p>
+        <p>These findings were used for discussions with local officials to call for disaster risk reduction subsidies and training programmes. </p>
+        <p>To read more about this case study, <a href="download/The South Asia Women's Resilience Index Dec8.pdf" target="_blank">download the full report</a></p>
+      </div>
+      </div> 
+    </div>
+    <div class="content c8">
+    <a href="#" class="case-btn case-btn-1 select-dim" ref="1">Case study 1</a> | <a href="#" class="case-btn case-btn-2" ref="2">Case study 2</a><br/><br/>
+      <div class="case-study case-study-1" >
+      <div class="media">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7XXcqQhXhNg?rel=0" frameborder="0" allowfullscreen></iframe>      
+       </div>
+       </div>
+    
+      
+       <div class="case-study case-study-2" style="display:none;">
+       <div class="media">
+<!--        <iframe width="560" height="315" src="https://www.youtube.com/embed/sDF-e7X2Jcs" frameborder="0" allowfullscreen></iframe>
+-->      <img src="footage/Pakistan.jpg"/>
+       </div>
+      <div class="title-copy">The impact of purdah in preparing for floods</div>
+      <div class="copy scroll">
+        <p>Early warning systems enable communities to mitigate the impact of disaster. </p>
+        <p>Evidence is emerging of programmes in South Asia where women are shaping early warning systems and activities.<br />
+           <br />
+          This is the case in the flood-prone village of Kamra in Pakistan&rsquo;s Punjab province, which has an early warning system managed by the community. </p>
+        <p>To ensure they were receiving crucial information on disaster risk, the women of Kamra established their own flood preparedness group. It addresses issues specific to living in purdah (female seclusion) in preparing for and responding to a flood.</p>
+        <p>The group has driven initiatives to mitigate women-specific risks during floods. </p>
+        <p>For example, it mobilised resources to construct a women-only community centre, which now serves as a safe shelter and a health clinic.</p>
+        <p>To read more about this case study, <a href="download/The South Asia Women's Resilience Index Dec8.pdf" target="_blank">download the full report</a></p>
+      </div>  
+      </div>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+  </div>
+  <div class="section4 section hide">
+    <div class="close-btn"></div>
+    <div class="wrapper">
+      <div class="indicator hide">
+        <div class="copy">
+          <ul class="white-font">
+            <li class="pt1">
+              <div>Economic</div>
+              <div class="copy">The levels of poverty in a society, the funding made available for disaster management, and women’s access to financial instruments and employment</div>
+            </li>
+            <li class="pt2">
+              <div>Infrastructure</div>
+              <div class="copy">The extensiveness and reliability of a country’s core infrastructure, i.e. transport, power and communications; presence of early-warning system; land-use and environmental regulations; water and sanitation</div>
+            </li>
+            <li class="pt3">
+              <div>Institutional</div>
+              <div class="copy">The extent of protection for women and vulnerable groups as a basis for disaster planning and response; presence of a culture of safety; DRR policy co-ordination and gender focus; government effectiveness</div>
+            </li>
+            <li class="pt4">
+              <div>Social</div>
+              <div class="copy">How vulnerable the population is in the face of a disaster, how educated it is and whether girls receive the same opportunities as boys; healthcare investments and indicators</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content hide">
+        <div class="country">
+          <div class="c1"></div>
+          <div class="c2"></div>
+          <div class="c3"></div>
+          <div class="c4"></div>
+          <div class="c5"></div>
+          <div class="c6"></div>
+          <div class="c7"></div>
+          <div class="c8"></div>
+        </div>
+        <div class="value">
+          <div class="col num">
+            <div class="num1">99.9</div>
+            <div class="num2">99.9</div>
+          </div>
+          <div class="col bar">
+            <div>
+              <div class="b1"></div>
+            </div>
+            <div>
+              <div class="b2"></div>
+            </div>
+          </div>
+          <div class="col num col2">
+            <div class="num3">99.9</div>
+            <div class="num4">99.9</div>
+          </div>
+          <div class="col bar">
+            <div>
+              <div class="b3"></div>
+            </div>
+            <div>
+              <div class="b4"></div>
+            </div>
+          </div>
+        </div>
+        <div class="copy">
+          <div style="margin-top:20px;">Notable issues in this category include:</div>
+          <ul class="d0-1">
+            <li>Women enjoy favourable economic environment with unhindered access to credit and financial instruments—96.8% of women have accounts at financial institutions</li>
+            <li>Women protected from discrimination in the workplace by legal provisions such as Equal Employment Opportunities Act, though wage inequality remains a feature of Japan’s labour environment.</li>
+          </ul>
+          <ul class="d0-2">
+            <li>Infrastructure and technology best-in-class: home to one of world’s most sophisticated disaster early-warning systems</li>
+            <li>2011 earthquake and tsunami led to further assessments of areas for development, and building codes are among the most stringent internationally</li>
+          </ul>
+          <ul class="d0-3">
+            <li>2011 Disaster Management Basic Plan places strong emphasis on specific vulnerabilities of women and need for their voices to be reflected in DRR planning</li>
+            <li>In practice, female leadership not mandatory or highly visible in Japanese DRR decision-making bodies</li>
+          </ul>
+          <ul class="d0-4">
+            <li>Signatory to Optional Protocol to the Convention for the Elimination of Discrimination Against Women (CEDAW)</li>
+            <li>Women live and work in an environment governed by patriarchal values but attitudes shifting: government has set a goal of raising the ratio of female managers in the workforce to 30% by 2020</li>
+          </ul>
+          <ul class="d1-1">
+            <li>Attitudes to women&rsquo;s access to finance and employment opportunities addressed in Tenth Five-Year Plan (2008-13), which specified gender as a cross-cutting theme</li>
+            <li>Tradition of matrilineal inheritance means that over 60% of land title deeds are held by women</li>
+          </ul>
+          <ul class="d1-2" >
+            <li>Early warning systems exist for glacial lake outburst floods and those from rainfall, but remain localised and are not linked to national or international systems.</li>
+            <li>Paved road network improved in recent years, but rural access remains challenging during the rainy season, particularly along the steep hillsides, which are prone to landslides</li>
+          </ul>
+          <ul class="d1-3" >
+            <li>Bhutan lacks a national-level critical infrastructure plan and social safety nets are limited</li>
+            <li>Growing recognition of importance of gender issues in design of legislation and policy frameworks</li>
+          </ul>
+          <ul class="d1-4" >
+            <li>More progressive social attitudes improve women&rsquo;s mobility and access to education</li>
+            <li>Performance in this category further bolstered by high enrolment rates for girls in secondary school and low levels of child malnutrition.</li>
+          </ul>
+          <ul class="d2-1" >
+            <li>Lowest poverty headcount ratio among the South Asian countries in the index</li>
+            <li>Majority of women rely on informal financing for access to credit and are primary beneficiaries of microfinance scheme—making up 92% of all borrowers</li>
+          </ul>
+          <ul class="d2-2" >
+            <li>Communications infrastructure is relatively good by regional standards</li>
+            <li>Improved stability after the end of the civil war due to investments in transport infrastructure</li>
+          </ul>
+          <ul class="d2-3" >
+            <li>Performs less well on &ldquo;culture of safety&rdquo; among institution</li>
+            <li>High degree of centralisation is a challenge in disaster risk management</li>
+          </ul>
+          <ul class="d2-4" >
+            <li>Violence against women continues to be a pervasive problem</li>
+            <li>Low female participation in economic activities in part a result of women&rsquo;s traditional roles as child-bearers and for domestic work, and lack of access to opportunities and information.</li>
+          </ul>
+          <ul class="d3-1" >
+            <li>Access to formal bank accounts limited for both men and women; only 9.6% of women have loans at financial institutions. </li>
+            <li>Key objective of the country&rsquo;s Microcredit Policy of 2007 was to drive access to credit for women and low-income families: in 2012, women comprised some 98.5% of borrowers.</li>
+          </ul>
+          <ul class="d3-2" >
+            <li>Gaps exist in communications between national and community level emergency response, and transport infrastructure is underdeveloped</li>
+            <li>Gaps in communication mechanisms have hindered development of early warning system that is integrated on national and community levels</li>
+          </ul>
+          <ul class="d3-3" >
+            <li>Growing recognition of gender issues in design of legislation and policy frameworks</li>
+            <li>Women are required to be represented on central and local disaster management committees under the 2009 National Strategy on Disaster Risk Management</li>
+          </ul>
+          <ul class="d3-4" >
+            <li>Women enjoy equal rights in property ownership and inheritance</li>
+            <li>Patriarchal attitudes predominant: half of unemployed women in Nepal cite childcare and domestic duties as the reason for not pursuing work opportunities</li>
+          </ul>
+          <ul class="d4-1" >
+            <li>Range of personal financing options available to women; has a more progressive labour environment than South Asian counterparts</li>
+            <li>Up to 10% of all programmes financed by the public sector can be spent on disaster risk reduction and climate change adaptation</li>
+          </ul>
+          <ul class="d4-2" >
+            <li>Poor  infrastructure for sanitation: only 36% of the population have access to sanitation, and just 25% of rural dwellers</li>
+            <li>Recent budgets have emphasised increased funding for transport infrastructure, but population is underserved by existing roads, ports, railways and airports</li>
+          </ul>
+          <ul class="d4-3" >
+            <li>2005 Disaster Management Act established a National Disaster Response Force, but effectiveness hampered by a lack of training and resources</li>
+            <li>High-profile cases have raised awareness on the issue of violence against women, but it is not referenced either in local or national DRR policy</li>
+          </ul>
+          <ul class="d4-4" >
+            <li>Gender inequality still pervasive, as exemplified by low secondary school enrolment rates for girls as opposed to boys</li>
+            <li>Socio-cultural beliefs and patriarchal attitudes hamper access to education opportunities for girls, limit access to healthcare and restrict physical mobility of women in many communities</li>
+          </ul>
+          <ul class="d5-1" >
+            <li>Despite having the highest GDP per capita in South Asia, women have little access to credit or financial instruments</li>
+            <li>Constitution enshrines right to equal opportunities for work, but no schemes are in place to generate or promote employment opportunities for women</li>
+          </ul>
+          <ul class="d5-2" >
+            <li>Performs well by regional standards on essential infrastructure for resilience (e.g. coverage of communications networks)</li>
+            <li>No national-level critical infrastructure plan, though some aspects are covered in the National Recovery and Reconstruction Plan, and a Strategic National Action Plan</li>
+          </ul>
+          <ul class="d5-3" >
+            <li>Few initiatives exist to extend social protection or income-generation opportunities for women</li>
+            <li>Scant recognition of importance of gender issues in design of legislation and policy frameworks</li>
+          </ul>
+          <ul class="d5-4" >
+            <li>Islamic tradition governs gender relations; while physical mobility does not appear to be highly restricted, domestic responsibilities have had implications for women&rsquo;s participation in workforce</li>
+            <li>Sociocultural factors have a bearing on equality of opportunity for education—only 42.4% of girls enrolled in secondary school in 2011</li>
+          </ul>
+          <ul class="d6-1" >
+            <li>Government funding for disaster relief (US$5.3 per person) is the highest of all the South Asian countries in the index</li>
+            <li>Poverty alleviation schemes target women, but they do not always enjoy decent work as indicated by labour conditions in the textile industry</li>
+          </ul>
+          <ul class="d6-2" >
+            <li>Struggles with quality of and access to power; transportation and sanitation infrastructure, and low technology-penetration rates</li>
+            <li>Compliance a pervasive issue, as exemplified by collapse of a garment factory building in 2013 that led to 1,138 deaths, despite presence of a mandatory building code</li>
+          </ul>
+          <ul class="d6-3" >
+            <li>National Plan for Disaster Management recognises vulnerabilities of women, though these do not necessarily trickle down into disaster-specific or local plans</li>
+            <li>Security and privacy concerns deter some women from shelters, and there is evidence of increased violence against women during and after disasters</li>
+          </ul>
+          <ul class="d6-4" >
+            <li>Mobility for women in largely Muslim Bangladesh varies depending on social status, religious affiliation or whether they reside in urban or rural areas</li>
+            <li>Socio-cultural norms restrict a large proportion of women to domestic responsibilities and limited access to education and health</li>
+          </ul>
+          <ul class="d7-1" >
+            <li>Women are highly restricted in their access to formal finance</li>
+            <li>No comprehensive employment schemes guaranteeing employment quotas for women or provision for equal wages to men exist at national level</li>
+          </ul>
+          <ul class="d7-2" >
+            <li>Large swathes of the population lack everyday access to sanitation facilities and healthcare</li>
+            <li>Does have an early warning system in place, but dissemination systems and integration between national and community levels remain less developed than in other countries in the index</li>
+          </ul>
+          <ul class="d7-3" >
+            <li>Relatively strong &ldquo;culture of safety&rdquo; enshrined in policy and planning documentation</li>
+            <li>2014 policy guidelines show a commitment to addressing specific needs of women in disaster management planning</li>
+          </ul>
+          <ul class="d7-4" >
+            <li>A woman&rsquo;s freedom of movement is governed by her socioeconomic class, region and whether she lives in an urban or rural setting</li>
+            <li>Restrictive social attitudes impede women&rsquo;s mobility and access to education</li>
+          </ul>
+          <ul style="display: none;">
+            <li>Communications infrastructure relatively good by regional standards </li>
+            <li>Improved stability after end of the civil war due to investments in transport infrastructure</li>
+          </ul>
+        </div>
+        <div class="legend"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section5 section ">
+    <div class="close-btn hide"></div>
+    <div class="list hide">
+      <ul>
+        <li style="font-size: 10px;padding-left: 5px;margin-bottom: 5px;color: #666;"><b>Key indicators</b> and categories:</li>
+                        <li class="title"> ECONOMIC</li>
+                                <li> <a href="#" rel="1" class=" "><span>·</span> Country-level economic strength</a></li>
+                                <li> <a href="#" rel="2" class=" "><span>·</span> Personal finance: Women</a></li>
+                                <li> <a href="#" rel="3" class=" "><span>·</span> Labour environment: Women</a></li>
+                                <li class="title"> INFRASTRUCTURE</li>
+                                <li> <a href="#" rel="4" class=" "><span>·</span> Adherence to land use regulations</a></li>
+                                <li> <a href="#" rel="5" class=" "><span>·</span> Adherence to building codes</a></li>
+                                <li> <a href="#" rel="6" class=" "><span>·</span> Communication</a></li>
+                                <li> <a href="#" rel="7" class=" "><span>·</span> Power</a></li>
+                                <li> <a href="#" rel="8" class=" "><span>·</span> Environmental performance</a></li>
+                                <li> <a href="#" rel="9" class=" "><span>·</span> Sanitation</a></li>
+                                <li> <a href="#" rel="10" class=" "><span>·</span> Quality of transport network</a></li>
+                                <li> <a href="#" rel="11" class=" "><span>·</span> Access to potable water</a></li>
+                                <li class="title"> INSTITUTIONAL</li>
+                                <li> <a href="#" rel="12" class=" "><span>·</span> Domestic protection</a></li>
+                                <li> <a href="#" rel="13" class=" "><span>·</span> Culture of safety</a></li>
+                                <li> <a href="#" rel="14" class=" "><span>·</span> Policy coordination</a></li>
+                                <li> <a href="#" rel="15" class=" "><span>·</span> Gender focus in DRR policy</a></li>
+                                <li> <a href="#" rel="16" class=" "><span>·</span> Government effectiveness</a></li>
+                                <li> <a href="#" rel="17" class=" "><span>·</span> Violence</a></li>
+                                <li class="title"> SOCIAL</li>
+                                <li> <a href="#" rel="18" class=" "><span>·</span> Population vulnerability</a></li>
+                                <li> <a href="#" rel="19" class=" "><span>·</span> Education and gender</a></li>
+                                <li> <a href="#" rel="20" class=" "><span>·</span> Health</a></li>
+                      </ul>
+    </div>
+    <div class="page1 hide">
+      <div class="title"></div>
+      <div class="country">Counrty</div>
+      <div class="indicator">Indicator</div>
+      <div class="value"></div>
+      <div class="button hide"><a href="#">More details</a></div>
+    </div>
+    <div class="page2 hide">
+      <div class="indicator-cat"></div>
+      <div class="indicator-title" style="">This indicator includes data measuring:</div>
+      <div class="indicator">Adherence to land use regulations</div>
+    </div>
+    <div class="wrapper hide">
+      <div class="country">
+        <div class="c1"></div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+        <div class="c5"></div>
+        <div class="c6"></div>
+        <div class="c7"></div>
+        <div class="c8"></div>
+      </div>
+      <div class="copy">
+        <div class="section5_2_japan_hit">Japan’s developed economy and sophisticated financial markets mean that women enjoy a favourable economic environment with unhindered access to credit and financial instruments—96.8% of women have accounts at financial institutions, according to the World Bank.</div>
+        <div class="section5_6_japan_hit">Japan’s infrastructure and technology are best-in-class: it is home to one of the world’s most sophisticated disaster early-warning systems.</div>
+        <div class="section5_15_japan_hit">In considering the needs of female internally displaced persons (IDPs), the 2011 Disaster Management Basic Plan requires the participation of women in running emergency shelters, and the participation of women in disaster-preparedness training.</div>
+        <div class="section5_3_japan_hit">Legislation to foster “family-friendly” policies in the workplace has facilitated the participation of women in the labour force, who make up 48.5% of workers. Attitudes are shifting of late:  Prime Minister Shinzo Abe set a goal of raising the ratio of female managers in the workforce to 30% by 2020.</div>
+        <div class="section5_2_bhutan_hit">Bhutan has an advantage over other South Asian countries for disaster resilience in attitudes pertaining to women’s access to finance and employment opportunities. Gender is specified as a cross-cutting theme in the Tenth Five-Year Plan (2008-13).</div>
+        <div class="section5_6_bhutan_hit">Early warning systems exist for glacial lake outburst floods and those from rainfall, but these remain localised and are not linked to national or international systems.</div>
+        <div class="section5_16_bhutan_hit">Government sources report that over 60% of land title registration deeds are held by women, given the customary practice of matrilineal inheritance, though tradition disadvantages women in the south of the country, where patrilineal inheritance is the norm.</div>
+        <div class="section5_19_bhutan_hit">Bhutan’s performance in the Social category is bolstered by high enrolment rates for girls in secondary school (76.1%) and low levels of child malnutrition (12.8%).</div>
+        <div class="section5_2_sri_hit">The majority of women rely on informal financing for access to credit and are the primary beneficiaries of microfinance schemes in Sri Lanka—they make up 92% of all borrowers. According to the World Bank, 19.4% of women have taken loans from financial institutions while 67.2% have accounts.</div>
+        <div class="section5_6_sri_hit">Mobile cellular subscriptions have a penetration rate of 95%, and significant improvements have been made to the early warning system in the wake of the devastating 2010 Indian Ocean tsunami
+          in the form of a dedicated Disaster Management Centre. </div>
+        <div class="section5_13_sri_hit">Women make up 5.3% of the police force, and while women’s and children’s desks are now located
+          in some police stations, no serious attempts have yet been made to increase the number and influence of female officers, despite high levels of violence and violence against women (VAW) in society. </div>
+        <div class="section5_18_sri_hit">While women face fewer restrictions on mobility compared with some other South Asian countries, low female participation in economic activities is in some part a result of women’s traditional roles as child-bearers and for domestic work, and a lack of access to opportunities and information pertaining to other work.</div>
+        <div class="section5_2_nepal_hit">In 2012, women comprised some 98.5% of microfinance borrowers. Access to formal bank accounts is limited for both men (30%) and women (21%) in Nepal, while only 9.6% of women have loans at financial institutions. </div>
+        <div class="section5_6_nepal_hit">Gaps in communication mechanisms— for example, just 36.4% of the population has access to television—has hindered the development of an early warning system that is integrated on national and community levels.</div>
+        <div class="section5_15_nepal_hit">Women are required to be represented on central and local disaster management committees under the 2009 National Strategy on Disaster Risk Management (not yet passed into law).This policy calls for DRR training to be provided on a priority basis to women and other marginalised groups. </div>
+        <div class="section5_18_nepal_hit">Patriarchal attitudes remain predominant in Nepalese society and have a bearing on women’s inclination to enter the workforce: half of unemployed women in Nepal cite childcare and domestic duties as the reason for not pursuing work opportunities. </div>
+        <div class="section5_2_india_hit">Some 93.7% of microfinance borrowers are women in India, and such schemes remain the key channel by which Indian women have access to credit. There are a number of regional financial institutions that have designed programmes and financial instruments specifically for women, such as Gujarat’s Self Employed Women’s Association (SEWA) bank.</div>
+        <div class="section5_6_india_hit">An early warning system has been established and monitoring systems are generally in place, though communication between the national and the local level can be variable across states.</div>
+        <div class="section5_15_india_hit">High-profile cases of sexual violence have raised public awareness on the issue of violence against women (VAW), leading to calls for new legislation: parliament passed a package of laws in 2013 to deter sexual VAW. </div>
+        <div class="section5_19_india_hit">While women have gained more visible representation and autonomy in past decades, gender inequality is still pervasive in India, as exemplified by low secondary school enrolment rates for girls (66.3%) as opposed to boys.</div>
+        <div class="section5_2_maldives_hit">There is a very limited microfinance network in the Maldives. A number of government initiatives are in place to improve access to credit for women, but there is scant evidence of female participation in finance programmes or the availability of financial instruments to women.</div>
+        <div class="section5_6_maldives_hit">Extensive communications networks (television, radio and mobile penetration) for this small
+          population boost its infrastructural capacity for disaster resilience, though issues around
+          information dissemination across the country’s many islands still pertain to its early warning system. </div>
+        <div class="section5_15_maldives_hit">Key documents or plans do not include provisions for the needs of female internally displaced persons, nor is women’s inclusion specified in disaster preparedness training. Similarly, measures to
+          address violence against women (VAW) are not included, despite VAW being experienced by an estimated one-third of women in 2007. </div>
+        <div class="section5_18_maldives_hit">Islamic tradition serves as the basis for current gender relations, and while physical mobility does not appear to be highly restricted, domestic responsibilities have had implications for women’s participation in the workforce: only 21% of female household heads were economically active in 2006.</div>
+        <div class="section5_2_bangladesh_hit">Women represent the majority of microfinance borrowers–90.1%— but their access to credit at both formal and informal institutions remains limited given the requirements for collateral. This is reflected in only 22.3% of loans being made to women at financial institutions, and women owning just 34.9% of bank accounts in 2012-13, according to the World Bank.</div>
+        <div class="section5_6_bangladesh_hit">The country does have many aspects of an end-to-end early warning system, with improvements shown in the success of the response to more recent cyclones. </div>
+        <div class="section5_15_bangladesh_hit">Planning documents provide for the needs of female internally displaced persons (IDPs) in that they encourage the building of separate facilities where possible and for the inclusion of women in the management committees of cyclone shelters. But security and privacy concerns continue to deter some women from shelters.</div>
+        <div class="section5_19_bangladesh_hit">Socio-cultural norms restrict a large proportion of women to domestic responsibilities and limited access to education and health. In 2011 only 54.5% of girls were enrolled in secondary school </div>
+        <div class="section5_2_pakistan_hit">Of the large South Asian countries in the index, women’s access to microfinance schemes in Pakistan is among the lowest, at around 54.7% of borrowers. Women make up just 1.9% of those taking out loans at financial institutions and 3% of those with accounts in 2012-13. </div>
+        <div class="section5_6_pakistan_hit">Pakistan does have an early warning system in place, but dissemination systems and integration between national and community levels remain less developed than in other countries in the index, in part owing to the low penetration of television (60.2%) and radio (10.9%).</div>
+        <div class="section5_13_pakistan_hit">There are dedicated emergency response units in the police force, where women play a largely secondary role. Only 0.6% of police officers are female in Pakistan as of 2013, according to the Network for Improved Policing in the South Asia, and they face severe restrictions on their duties and roles.</div>
+        <div class="section5_19_pakistan_hit">Traditional practices have a bearing on the mobility of women in many communities, as exemplified
+          by the low enrolment rates of girls in secondary education—30.9%—indicating that movement
+          remains highly restricted for the majority of women. </div>
+        <span style="font-size:11px;"><br>
+        For full country summaries and sources see the accompanying <br>
+        white paper and downloadable Excel spreadsheet.</span> </div>
+    </div>
+  </div>
+</div>
+<script>
+
+$(".global").hide();
+
+var menu = new Menu();
+//menu.setMenu(1 , 0);
+
+
+var shown = 0;
+var sections = [];
+
+var radius = 270;
+var radiusOffset = 16;
+var centerX  = 980*.5;
+var centerY  = 580*.5;
+var center = { "x":centerX , "y":centerY };
+var currentSection ;
+
+var s = Snap("#svg");
+var rad = Math.PI / 180;
+var line = s.group();
+
+var mapMask = s.circle(centerX,centerY,1000).attr({  fill: "#fff" });;
+mapMask.node.id = "mapMask";
+
+var mapParent = s.group();
+
+var map = s.group();
+map.node.id = "map";
+
+
+var mapWrapper = s.group();
+mapWrapper.node.id = "mapWrapper";
+
+mapParent.append(map);
+mapParent.attr({mask:mapMask});
+
+map.append(mapWrapper);
+map.attr({ opacity: 0 });
+line.attr({ opacity: 0 });
+
+var myLoadList = [  "line.svg" ,"map.svg" ,"section4.svg"];
+var myDisplayList = { "map.svg": "zoom", "line.svg": "fade" };
+
+
+var section4SVG ;
+
+$('.section5 .list a').hover(function(){
+	sections[5].highlightPin($(this).attr('rel'));
+},function(){
+	sections[5].resetPin();
+});
+
+$('.section5 .list a').click(function(event){
+	event.preventDefault();
+	
+	if(sections[5].currentPin == $(this).attr('rel')) return;
+	if(sections[5].isTween) return;
+
+	sections[5].expandBar($(this).attr('rel'));
+	
+	//console.log("No:",$(this).attr('rel'));
+	var ind = $(this).attr('rel');
+	/*if($(this).attr('rel') == 4 || $(this).attr('rel') == 5 || $(this).attr('rel') == 10 || $(this).attr('rel') == 11){
+	$(".section5 .page2 .indicator-cat").html("");
+	
+	}else{
+		//console.log("F");	
+	$(".section5 .page2 .indicator-cat").html(indicator2[$(this).attr('rel')]);
+	}*/
+	$(".section5 .page2 .indicator-cat").html(indicator2[$(this).attr('rel')]);
+	
+	$(".section5 .page2 .indicator").html(indicator[$(this).attr('rel')]);
+	
+	TweenMax.to('.section5 .wrapper', .5, {autoAlpha:0});
+	TweenMax.to(".section5 .close-btn", .5, {autoAlpha:1});
+	
+});
+
+
+
+$('.section5 .close-btn').click(function(event){
+	event.preventDefault();
+	sections[5].hideOverlay();
+	sections[5].currentPin = 0;
+	sections[5].shrinkBar().show(.2,0,0);
+	TweenMax.to(".section5 .close-btn", .5, {autoAlpha:0});
+});
+
+$('.section5 .button a').click(function(event){
+	event.preventDefault();
+	sections[5].showOverlay();
+	TweenMax.to(".section5 .close-btn", .5, {autoAlpha:1});
+	
+	var barID = $(this).attr("rel").split("_");
+	var cID = _countryID[barID[2]];
+	var cData = data[cID]
+	
+	
+	$('.section5 .wrapper .country div').hide();
+	$('.section5 .wrapper .country .c'+(cID+1)).show();
+	
+	$('.section5 .wrapper .copy div').hide();
+	$('.section5 .wrapper .copy .'+$(this).attr("rel")).show();
+	
+	TweenMax.to(".section5 .wrapper",.5, {backgroundColor:cData.color});
+	//$('.section5 .country').html(cData.name);
+	
+});
+
+
+function hideAllCountry(duration){
+	
+	duration = (duration == null)?0:duration*1000;
+	
+	for( var i = 0 ; i < 8 ; i++){
+		var tmp = data[i];
+		
+		map.select("#"+tmp.barID).animate({opacity: 0},duration);
+		
+	}
+	
+}
+
+function centerMap(duration){
+	
+	duration = (duration == null)?0:duration;
+
+	TweenMax.to("#map", duration, {x:-454,y:-414,scale:.8});	
+	
+}
+
+	var section1 = new Section1();
+	var section2 = new Section2();
+	var section3 = new Section3();
+	var section4 = new Section4();
+	var section5 = new Section5();
+
+
+window.onload = function () {
+	
+	
+$(".scroll").mCustomScrollbar();
+
+function init(){
+	
+	////console.log("init");
+	
+	var tmp = [];
+
+	
+	sections[1] = section1;
+	sections[2] = section2;
+	sections[3] = section3;
+	sections[4] = section4;
+	sections[5] = section5;
+	
+	//sections[4].setCopy(section4SVG);
+	
+    TweenMax.to($(".index"),0,{autoAlpha:0});
+	//section3.init();
+	
+	//section1.show();
+	menu.goto(1);
+	TweenMax.to($('#menu'), 	.5 ,{autoAlpha:1 });
+	TweenMax.to($('#menu').find('.copy'), 	.5 ,{autoAlpha:1 });
+	
+	
+	
+	//currentSection = section2;
+}
+
+//init();
+
+
+
+function onAllLoaded() {
+	
+   ////console.log('all loaded'); 
+   map.animate({opacity: 1},1000);
+   map.select("#world").animate({opacity: 0.9},0);
+   map.select("#maldives_x5F_line").attr({opacity: 0});
+   hideAllCountry();
+
+   line.animate({opacity: .3},1000);
+   
+   $(".global").show();
+   init();
+         
+}
+
+
+
+function onEachLoaded( frag, fileName ) { 
+	switch(fileName){
+		case(myLoadList[2]):
+			
+			section4.setCopy(frag);
+	
+		break;	
+		case(myLoadList[1]):
+			
+			mapWrapper.append(frag);
+			centerMap();
+	
+		break;	
+		case(myLoadList[0]):
+			line.append(frag);
+			line.mouseup(function(){ 
+				
+				
+				
+				
+				if(currentSection.id == 3){
+					
+					currentSection.reset();	
+					TweenMax.to($(".index"),.5,{autoAlpha:1 , delay:0});
+					
+					
+				}
+				
+				if(currentSection.id == 4){
+					
+					currentSection.closeOverlay();	
+					
+				}
+			});
+		break;
+	}
+}
+
+s.loadFilesDisplayOrdered( "footage/", myLoadList, onAllLoaded, onEachLoaded );
+
+
+$("#canvas").mousemove(function( event ) {
+  var msg = "Handler for .mousemove() called at ";
+  msg += event.pageX + ", " + event.pageY; 
+  $("#tooltips").css("top",event.pageY+"px").css("left",(event.pageX+20)+"px");
+  
+});
+
+
+
+var move = function(dx,dy) {
+        this.attr({
+                    transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+                });
+}
+
+var start = function() {
+        this.data('origTransform', this.transform().local );
+}
+var stop = function() {
+        ////console.log(map.matrix.e,map.matrix.f);
+}
+	
+ };
+ 
+ 
+ $( window ).resize(function() {
+  onresize();
+});
+
+function onresize(){
+	/*if($( window ).height() > 580 ){
+		  $( "#canvas" ).css("margin-top", (($( window ).height() - 580 )*.5)+"px");
+  }*/
+}
+
+onresize();
+
+var currentStep = 1;
+
+$(".user-guide").click(function(event){
+event.preventDefault();
+//console.log("user-guide")
+currentStep = 1;
+$(".step").hide();
+$(".step-"+currentStep).show();
+$(".guide-copy1").html("Step "+currentStep+" of 6 :");
+$(".guide-copy2").html(guide_title[currentStep]);
+$(".guide-copy3").html(guide_copy[currentStep]);
+
+$(".guide").css("visibility","inherit").css("opacity",1);
+$(".section1").css("z-index", 30)
+$(".logo").css("visibility","hidden").css("opacity",0);
+
+})
+
+$(".close-guide").click(function(event){
+event.preventDefault();
+
+$(".guide").css("visibility","hidden").css("opacity",0);
+$(".section1").css("z-index", 0)
+$(".logo").css("visibility","inherit").css("opacity",1);
+currentStep = 1;
+})
+
+
+$(".next-step").click(function(event){
+
+event.preventDefault();
+//console.log("next-step")
+
+if(currentStep == 5){
+$(".btn-r").addClass("r-dim")
+}
+
+if(currentStep <= 5){
+currentStep = currentStep +1;
+	$(".btn-l").removeClass("l-dim")
+}else{
+	
+	$(".btn-r").addClass("r-dim")
+}
+
+$(".step").hide();
+$(".step-"+currentStep).show();
+$(".guide-copy1").html("Step "+currentStep+" of 6 :");
+$(".guide-copy2").html(guide_title[currentStep]);
+$(".guide-copy3").html(guide_copy[currentStep]);
+////console.log(guide-title[currentStep],guide-copy[currentStep]);
+
+})
+
+$(".previous-step").click(function(event){
+event.preventDefault();
+
+
+if(currentStep == 2){
+$(".btn-l").addClass("l-dim")
+}
+
+if(currentStep > 1){
+currentStep = currentStep -1;
+$(".btn-r").removeClass("r-dim")
+}else{
+	
+	$(".btn-l").addClass("l-dim")
+	
+}
+
+$(".step").hide();
+$(".step-"+currentStep).show();
+$(".guide-copy1").html("Step "+currentStep+" of 6 :");
+$(".guide-copy2").html(guide_title[currentStep]);
+$(".guide-copy3").html(guide_copy[currentStep]);
+
+})
+
+/*$('.s-btn').hover(function(){
+	
+	//console.log($(this).attr("rel"),"in")
+	
+	$(".btn-"+$(this).attr("rel")).addClass($(this).attr("rel")+"-dim")
+	
+	
+},function(){
+	//console.log($(this).attr("rel"),"out")
+	
+	$(".btn-"+$(this).attr("rel")).removeClass($(this).attr("rel")+"-dim")
+	
+})*/
+
+
+</script>
+</body>
+</html>

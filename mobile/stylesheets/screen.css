@@ -1,0 +1,518 @@
+/* line 1, ../sass/screen.scss */
+body {
+  -webkit-text-size-adjust: 100%;
+  max-height: 999999px;
+}
+
+/* line 7, ../sass/screen.scss */
+img {
+  border: 0;
+}
+
+/* line 8, ../sass/screen.scss */
+a {
+  color: #333;
+}
+
+/* line 12, ../sass/screen.scss */
+.canvas, svg {
+  width: 640px;
+  height: 720px;
+  margin: 0 auto;
+  background: url(../images/overall_bg.jpg) top no-repeat;
+}
+
+/* line 19, ../sass/screen.scss */
+.graphic {
+  width: 640px;
+}
+
+/* line 24, ../sass/screen.scss */
+.footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 28, ../sass/screen.scss */
+.footer .link {
+  padding-top: 15px;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+/* line 38, ../sass/screen.scss */
+.back-to-top {
+  background: url(../images/back_to_top.jpg) no-repeat center;
+  width: 100%;
+  height: 64px;
+}
+
+/* line 45, ../sass/screen.scss */
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 49, ../sass/screen.scss */
+.logo #logo1 {
+  padding-right: 10px;
+}
+/* line 51, ../sass/screen.scss */
+.logo .small-4 {
+  padding-left: 40px;
+}
+
+/* line 54, ../sass/screen.scss */
+.dropdown {
+  width: 640px;
+  height: 111px;
+  background: url(../images/dropdown.jpg) no-repeat center;
+}
+/* line 61, ../sass/screen.scss */
+.dropdown select {
+  background: transparent;
+  margin: 20px 0px 0px 35px;
+  padding: 0px 0px 0px 25px;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 70px;
+  width: 89%;
+  -webkit-appearance: none !important;
+}
+
+/* line 77, ../sass/screen.scss */
+.up, .down {
+  height: 95px;
+}
+
+/* line 79, ../sass/screen.scss */
+.up {
+  background-position: top;
+}
+
+/* line 80, ../sass/screen.scss */
+.down {
+  background-position: bottom;
+}
+/* line 82, ../sass/screen.scss */
+.down select {
+  margin-top: 5px;
+}
+
+/* line 90, ../sass/screen.scss */
+.nav {
+  margin-top: 10px;
+  width: 100%;
+  height: 145px;
+  background: url(../images/nav.jpg) no-repeat top;
+}
+/* line 99, ../sass/screen.scss */
+.nav .nav-btn, .nav .nav-btn-common {
+  float: left;
+}
+/* line 101, ../sass/screen.scss */
+.nav .nav-btn-common {
+  visibility: hidden;
+}
+/* line 103, ../sass/screen.scss */
+.nav .nav-btn1, .nav .nav-btn2, .nav .nav-btn3, .nav .nav-btn4, .nav .nav-btn5, .nav .nav-btn6, .nav #nav1, .nav #nav2, .nav #nav3, .nav #nav4, .nav #nav5, .nav #nav6 {
+  height: 113px;
+}
+/* line 105, ../sass/screen.scss */
+.nav .nav-btn1 {
+  width: 116px;
+}
+/* line 106, ../sass/screen.scss */
+.nav .nav-btn2 {
+  width: 102px;
+}
+/* line 107, ../sass/screen.scss */
+.nav .nav-btn3 {
+  width: 102px;
+}
+/* line 108, ../sass/screen.scss */
+.nav .nav-btn4 {
+  width: 100px;
+}
+/* line 109, ../sass/screen.scss */
+.nav .nav-btn5 {
+  width: 103px;
+}
+/* line 110, ../sass/screen.scss */
+.nav .nav-btn6 {
+  width: 117px;
+}
+/* line 112, ../sass/screen.scss */
+.nav #nav1 {
+  width: 116px;
+  background: url(../images/nav1.png) no-repeat top;
+}
+/* line 113, ../sass/screen.scss */
+.nav #nav2 {
+  width: 102px;
+  background: url(../images/nav2.png) no-repeat top;
+}
+/* line 114, ../sass/screen.scss */
+.nav #nav3 {
+  width: 102px;
+  background: url(../images/nav3.png) no-repeat top;
+}
+/* line 115, ../sass/screen.scss */
+.nav #nav4 {
+  width: 100px;
+  background: url(../images/nav4.png) no-repeat top;
+}
+/* line 116, ../sass/screen.scss */
+.nav #nav5 {
+  width: 103px;
+  background: url(../images/nav5.png) no-repeat top;
+}
+/* line 117, ../sass/screen.scss */
+.nav #nav6 {
+  width: 117px;
+  background: url(../images/nav6.png) no-repeat top;
+}
+
+/* line 121, ../sass/screen.scss */
+.hide {
+  visibility: hidden;
+}
+
+/* line 124, ../sass/screen.scss */
+.show {
+  visibility: inherit;
+}
+
+/* line 129, ../sass/screen.scss */
+.japan {
+  background: #e40000;
+}
+
+/* line 130, ../sass/screen.scss */
+.bhutan {
+  background: #032c4b;
+}
+
+/* line 131, ../sass/screen.scss */
+.sriLanka {
+  background: #006382;
+}
+
+/* line 132, ../sass/screen.scss */
+.nepal {
+  background: #0087a4;
+}
+
+/* line 133, ../sass/screen.scss */
+.india {
+  background: #00aac8;
+}
+
+/* line 134, ../sass/screen.scss */
+.maldives {
+  background: #66c3d4;
+}
+
+/* line 135, ../sass/screen.scss */
+.bangladesh {
+  background: #98d5dd;
+}
+
+/* line 136, ../sass/screen.scss */
+.pakistan {
+  background: #84bdc7;
+}
+
+/* line 141, ../sass/screen.scss */
+.section1 .index-header, .section2 .index-header {
+  font-size: 12px;
+}
+/* line 146, ../sass/screen.scss */
+.section1 .about, .section2 .about {
+  background: url(../images/about.jpg) center no-repeat;
+  width: 640px;
+  height: 960px;
+}
+/* line 151, ../sass/screen.scss */
+.section1 .about .copy, .section2 .about .copy {
+  font-size: 20px;
+  color: #FFFFFF;
+  padding-top: 270px;
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 28px;
+}
+
+/* line 169, ../sass/screen.scss */
+.section3 .overall-detail {
+  display: none;
+}
+/* line 173, ../sass/screen.scss */
+.section3 .canvas, .section3 svg {
+  width: 640px;
+  height: 720px;
+  margin: 0 auto;
+  background: url(../images/section3-bg.jpg) top no-repeat;
+}
+/* line 181, ../sass/screen.scss */
+.section3 .counties {
+  min-height: 370px;
+  color: #FFF;
+}
+/* line 186, ../sass/screen.scss */
+.section3 .counties .country {
+  font-size: 24px;
+  padding: 30px 0px 0px 25px;
+}
+/* line 190, ../sass/screen.scss */
+.section3 .counties .mark {
+  font-size: 48px;
+  padding: 0px 0px 0px 25px;
+}
+/* line 193, ../sass/screen.scss */
+.section3 .counties .copy {
+  font-size: 24px;
+  padding: 0px 0px 0px 25px;
+  line-height: 30px;
+}
+/* line 200, ../sass/screen.scss */
+.section3 .case-study {
+  color: #FFF;
+  min-height: 370px;
+}
+/* line 205, ../sass/screen.scss */
+.section3 .case-study .media {
+  margin: 20px 0px;
+  max-height: 999999px;
+}
+/* line 206, ../sass/screen.scss */
+.section3 .case-study .copy1 {
+  padding: 10px 0px 0px 20px;
+  font-size: 28px;
+  line-height: 34px;
+  max-height: 999999px;
+}
+/* line 207, ../sass/screen.scss */
+.section3 .case-study .copy2 {
+  font-size: 24px;
+  line-height: 30px;
+  max-height: 999999px;
+  padding-bottom: 30px;
+}
+/* line 208, ../sass/screen.scss */
+.section3 .case-study .copy2 a {
+  color: #fff;
+  text-decoration: underline;
+}
+/* line 213, ../sass/screen.scss */
+.section3 .map {
+  height: 100px;
+  min-height: 370px;
+  background-color: #FFF;
+  text-align: left;
+  padding: 0px;
+}
+
+/* line 226, ../sass/screen.scss */
+.section .countries {
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0px 20px;
+}
+/* line 231, ../sass/screen.scss */
+.section .countries .value {
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  width: 570px;
+  height: 111px;
+  background: url(../images/section4-icon.png) no-repeat center;
+  padding: 11px 0px 11px 46px;
+  margin-left: 35px;
+  color: #FFF;
+}
+/* line 244, ../sass/screen.scss */
+.section .countries .country {
+  width: 250px;
+  height: 21px;
+  background: url(../images/c1.png) center no-repeat;
+  margin: 0 auto;
+  padding: 40px;
+}
+/* line 246, ../sass/screen.scss */
+.section .countries .value-bar {
+  margin: 10px 10px 10px 10px;
+}
+/* line 248, ../sass/screen.scss */
+.section .countries .nums {
+  width: 33px;
+  float: left;
+}
+/* line 250, ../sass/screen.scss */
+.section .countries .nums .num {
+  margin: -4px 0px 0px 12px;
+  font-size: 24px;
+}
+/* line 256, ../sass/screen.scss */
+.section .countries .bars {
+  width: 150px;
+  float: left;
+}
+/* line 258, ../sass/screen.scss */
+.section .countries .bars .bar {
+  margin: 1px 0px 2px 35px;
+}
+/* line 262, ../sass/screen.scss */
+.section .countries .col2 {
+  margin-left: 80px;
+}
+/* line 266, ../sass/screen.scss */
+.section .countries .copy {
+  max-height: 999999px;
+  font-size: 24px;
+  color: #FFF;
+  padding-left: 35px;
+  min-height: 350px;
+}
+/* line 276, ../sass/screen.scss */
+.section .countries .copy li {
+  font-size: 22px;
+}
+/* line 279, ../sass/screen.scss */
+.section .countries .bar {
+  float: left;
+  width: 156px;
+  height: 28px;
+  background: url(../images/bar-bg.png);
+}
+/* line 281, ../sass/screen.scss */
+.section .countries .bar .b1, .section .countries .bar .b2, .section .countries .bar .b3, .section .countries .bar .b4 {
+  width: 1px;
+  height: 28px;
+  background-color: #FFF;
+  opacity: 1;
+}
+/* line 288, ../sass/screen.scss */
+.section .indicators {
+  background: url(../images/section4-indicator.jpg) no-repeat center;
+  width: 640px;
+  height: 950px;
+  font-size: 24px;
+  max-height: 99999px;
+}
+/* line 296, ../sass/screen.scss */
+.section .indicators .white-font {
+  padding: 120px 25px 0px 25px;
+  font-size: 24px;
+}
+/* line 301, ../sass/screen.scss */
+.section .indicators .white-font .pt {
+  padding-left: 50px;
+}
+/* line 303, ../sass/screen.scss */
+.section .indicators .white-font .pt .copy {
+  margin-left: -42px;
+  padding-top: 10px;
+  font-size: 22px;
+}
+/* line 310, ../sass/screen.scss */
+.section .indicators .white-font .pt1 {
+  padding-top: 4px;
+}
+/* line 312, ../sass/screen.scss */
+.section .indicators .white-font .pt2 {
+  padding-top: 18px;
+}
+/* line 314, ../sass/screen.scss */
+.section .indicators .white-font .pt3 {
+  padding-top: 26px;
+}
+/* line 316, ../sass/screen.scss */
+.section .indicators .white-font .pt4 {
+  padding-top: 35px;
+}
+/* line 319, ../sass/screen.scss */
+.section .indicators ul {
+  list-style: none;
+  padding-left: 10px;
+}
+/* line 324, ../sass/screen.scss */
+.section .indicators li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  padding-left: 10px;
+}
+
+/* line 335, ../sass/screen.scss */
+#section4 .canvas, #section4 svg {
+  width: 640px;
+  height: 770px;
+  margin: 0 auto;
+  background: url(../images/section4-bg.jpg) top no-repeat;
+  position: relative;
+}
+/* line 343, ../sass/screen.scss */
+#section4 .assessed {
+  width: 230px;
+  height: 20px;
+  position: absolute;
+  top: 812px;
+  left: 205px;
+}
+
+/* line 354, ../sass/screen.scss */
+#section5 .canvas, #section5 svg {
+  width: 640px;
+  height: 730px;
+  margin: 0 auto;
+  background: url(../images/section5-bg.jpg) top no-repeat;
+}
+/* line 364, ../sass/screen.scss */
+#section5 .country {
+  width: 300px;
+  height: 42px;
+  float: left;
+  background: url(../images/c1b.png) center no-repeat;
+  margin: 0 auto;
+  padding: 40px;
+  margin-left: 20px;
+}
+/* line 365, ../sass/screen.scss */
+#section5 .mark {
+  width: 120px;
+  height: 45px;
+  float: right;
+  font-size: 45px;
+  color: #fff;
+  max-height: 999999px;
+}
+/* line 366, ../sass/screen.scss */
+#section5 .countries .copy {
+  padding-left: 25px;
+  min-height: 0px;
+}
+/* line 368, ../sass/screen.scss */
+#section5 .indicator-cate {
+  margin-left: 35px;
+  margin-top: 40px;
+  color: #fff;
+  font-size: 28px;
+}
+/* line 375, ../sass/screen.scss */
+#section5 .indicator-title {
+  margin-left: 35px;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 24px;
+}
+/* line 382, ../sass/screen.scss */
+#section5 .indicator {
+  padding-left: 55px;
+  color: #fff;
+}
+/* line 385, ../sass/screen.scss */
+#section5 .indicator ul li {
+  font-size: 24px;
+  max-height: 999999px;
+}

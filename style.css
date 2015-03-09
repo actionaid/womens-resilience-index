@@ -1,0 +1,173 @@
+body{
+	background-color:#666;	
+}
+
+#canvas{
+	width:980px;
+	height:580px;
+	margin:0 auto;
+	background:#FFF;
+	position:relative;	
+	overflow:hidden;
+}
+
+#svg{
+	width:980px;
+	height:580px;
+	overflow:hidden;
+	
+}
+
+#line{
+	/*pointer-events:none;*/	
+}
+
+#map{
+	pointer-events:none;	
+}
+
+.menu{
+	
+	position:absolute;
+	z-index:20;
+	top: 170px;
+	left: 35px;
+	width:24px;
+	height:212px;
+	background:url(footage/menu-off.png) no-repeat;
+	
+}
+
+.menu .item{
+	width:24px;
+	height:24px;
+	margin-bottom:23px;
+	cursor:pointer;
+}
+
+.menu .item > div{
+	width:100%;
+	height:100%;
+	background:url(footage/menu-on.png) no-repeat;	
+}
+
+.menu .item1 div{
+	background-position:0px 0px;
+}
+
+.menu .item2 div{
+	background-position:0px -47px;
+}
+
+.menu .item3 div{
+	background-position:0px -94px;
+}
+
+.menu .item4 div{
+	background-position:0px -141px;
+}
+
+.menu .item5 div{
+	background-position:0px -188px;
+}
+
+
+.section{
+	position:absolute;
+	z-index:10;	
+}
+
+.section1{
+	top:0px;
+	left:0px;	
+}
+
+.section1 .logo{
+	width:490px;
+	height:491px;
+	background:url(footage/section1.png) no-repeat;
+	position:absolute;
+	top: 44px;
+	left: 245px;	
+	
+}
+
+.section2{
+	top:0px;
+	left:0px;
+	width:980px;
+	height:580px;
+		
+}
+
+.section2 .copy{
+	width:761px;
+	height:761px;
+	background:url(footage/section2.png) no-repeat;
+	position:absolute;
+	top: -111px;
+	left: 115px;
+	
+}
+
+.section2 .copy div{
+	color: #FFF;
+	font-size: 14px;
+	padding: 285px 123px;
+	text-align: center;
+	line-height: 23px;
+	font-family: "open sans", Arial;
+}
+
+
+.section3{
+	width: 244px;
+	/*height: 285px;*/
+	top: 175px;
+	left: 376px;
+	
+}
+
+.section3 .title{
+	width:200px;
+	height:150px;
+	background:url(footage/section3-title.png) no-repeat;
+	position:absolute;
+	top: 35px;
+	left: 10px;
+	/*pointer-events:none;*/
+}
+
+
+.section3 .country{
+	font-size:20px;
+	color:#CCC;
+	font-family:'Open Sans Condensed', sans-serif;
+	margin-left: 112px;
+	margin-top: 20px;
+	
+}
+
+.section3 .value{
+	font-size:50px;
+	color:#CCC;
+	font-family:'Open Sans Condensed', sans-serif;	
+	margin-left: 112px;
+	line-height: 50px;
+}
+
+.section3  .desc{
+	font-size:12px;
+	padding:10px;
+	line-height:20px;
+	font-family:'Open Sans', sans-serif;
+}
+
+#section3_bar path{
+	cursor:pointer;
+}
+
+
+.hide{
+	visibility:hidden;	
+}
